@@ -36,7 +36,7 @@ let userMessage;
 const createChatLi = (message, className) => {
     const chatLi = document.createElement("li");
     chatLi.classList.add("chat", className)
-    let chatContent = className === "outgoing" ? `<p></p>`: `<img src="chat-gpt.jpeg" alt=""><pre><p></p></pre>`
+    let chatContent = className === "outgoing" ? `<p></p>`: `<img src="logosmi.png" alt=""><pre><p></p></pre>`
     chatLi.innerHTML = chatContent;
     chatLi.querySelector("p").textContent = message;
     return chatLi;
