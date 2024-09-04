@@ -36,7 +36,7 @@ let userMessage;
 const createChatLi = (message, className) => {
     const chatLi = document.createElement("li");
     chatLi.classList.add("chat", className)
-    let chatContent = className === "outgoing" ? <p></p>: <img src="chat-gpt.png" alt=""><pre><p></p></pre>
+    let chatContent = className === "outgoing" ? `<p></p>`: `<img src="chat-gpt.png" alt=""><pre><p></p></pre>`
     chatLi.innerHTML = chatContent;
     chatLi.querySelector("p").textContent = message;
     return chatLi;
@@ -54,7 +54,7 @@ const randomString = generateRandomString(16);
 const chatId = randomString + Math.floor(Math.random() * 100000) + 1;
 let generateResponse = (incomingChatLi) => {
     const prompt = document.getElementById('message').value;
-    let apiUrl = https://itzpire.com/ai/gpt-web?q=${encodeURIComponent(prompt)}&chat_id=${chatId};
+    let apiUrl = `https://itzpire.com/ai/gpt-web?q=${encodeURIComponent(prompt)}&chat_id=${chatId}`;
     console.log(apiUrl)
     let hasil = incomingChatLi.querySelector("p")
     chatInput.readOnly = true;
@@ -67,7 +67,7 @@ let generateResponse = (incomingChatLi) => {
         if (data.status) {
             hasil.textContent = data.result;
         } else {
-            hasil.textContent = 'Maaf, saya tidak mengerti apa yang Kakak tanyakan. Bisakah Anda ulangi pertanyaan Kakak?';
+            hasil.textContent = 'Maaf, saya tidak mengerti apa yang Kakak tanyakan. Bisakah Kakak ulangi pertanyaan Kakak?';
         }
     })
     .catch(error => {
