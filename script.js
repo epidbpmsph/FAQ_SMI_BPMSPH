@@ -58,7 +58,7 @@ let generateResponse = (incomingChatLi) => {
     console.log(apiUrl)
     let hasil = incomingChatLi.querySelector("p")
     chatInput.readOnly = true;
-    chatInput.placeholder = 'Mohon tunggu yaa Kak...'
+    chatInput.placeholder = 'Mohon tunggu yaa Sobat BPMSPH...'
     
     fetch(apiUrl)
     .then(response => response.json())
@@ -67,15 +67,15 @@ let generateResponse = (incomingChatLi) => {
         if (data.status) {
             hasil.textContent = data.result;
         } else {
-            hasil.textContent = 'Maaf, Simi tidak mengerti apa yang Kakak tanyakan. Bisakah Kakak ulangi pertanyaan Kakak?';
+            hasil.textContent = 'Maaf, Simi tidak mengerti apa yang Sobat BPMSPH tanyakan. Bisakah Sobat ulangi pertanyaan Sob.....?';
         }
     })
     .catch(error => {
-        hasil.textContent = 'Terjadi kesalahan pada sistem, coba lagi nanti yaa Kak.';
+        hasil.textContent = 'Terjadi kesalahan pada sistem, coba lagi nanti yaa Sobat BPMSPH.';
         console.error('Error:', error);
     }).finally(() => { chatBox.scrollTo(0, chatBox.scrollHeight)
         chatInput.readOnly = false;
-        chatInput.placeholder = 'Masukkan pertanyaan Kakak disini...';
+        chatInput.placeholder = 'Masukkan pertanyaan Sobat BPMSPH disini...';
     }
     );
 }
