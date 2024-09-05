@@ -67,11 +67,11 @@ let generateResponse = (incomingChatLi) => {
         if (data.status) {
             hasil.textContent = data.result;
         } else {
-            hasil.textContent = 'Maaf, Simi tidak mengerti apa yang Sobat BPMSPH tanyakan. Bisakah Sobat ulangi pertanyaan Sob.....?';
+            hasil.textContent = 'Maaf, Simi tidak mengerti apa yang Sobat BPMSPH tanyakan. Bisakah Sobat ulangi pertanyaannya Sob.....?';
         }
     })
     .catch(error => {
-        hasil.textContent = 'Terjadi kesalahan pada sistem, coba lagi nanti yaa Sobat BPMSPH.';
+        hasil.textContent = 'Mohon maaf tidak dimengerti pertanyaannya, coba lagi diganti pertanyaannya yaa Sobat BPMSPH.';
         console.error('Error:', error);
     }).finally(() => { chatBox.scrollTo(0, chatBox.scrollHeight)
         chatInput.readOnly = false;
